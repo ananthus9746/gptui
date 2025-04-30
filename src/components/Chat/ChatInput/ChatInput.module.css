@@ -1,0 +1,74 @@
+.chatInputForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.chatInputContainer {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.75rem;
+    background-color: rgb(190, 190, 190);
+    padding: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.chatInput {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    line-height: 1.5;
+    min-height: 24px;
+    max-height: 200px;
+    resize: none;
+    padding: 0.5rem;
+    outline: none;
+}
+
+.attachButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: #6e6e80;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.attachButton:hover {
+    background-color: #f1f1f1;
+}
+
+.sendButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: #d9d9e3;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    cursor: default;
+}
+
+.sendButton.active {
+    color: #10a37f;
+    cursor: pointer;
+}
+
+.sendButton.active:hover {
+    background-color: #f1f1f1;
+}
+
+.hintText {
+    font-size: 0.75rem;
+    color: #8e8ea0;
+    text-align: center;
+    padding: 0.5rem 0;
+}

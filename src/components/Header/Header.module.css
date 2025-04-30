@@ -1,0 +1,135 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 16px;
+    background-color: #202123;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.leftSection {
+    display: flex;
+    align-items: center;
+}
+
+.rightSection {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.menuButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    margin-right: 12px;
+    color: #ececf1;
+}
+
+.menuButton:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.chatTitle {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+}
+
+.newChatButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 36px;
+    padding: 0 12px;
+    background-color: #3e3f4b;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.newChatButton:hover {
+    background-color: #4a4b57;
+}
+
+.modelSelector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 36px;
+    padding: 0 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.modelSelector:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dropdownContainer {
+    position: relative;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 4px;
+    background-color: #202123;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    width: 150px;
+}
+
+.dropdownItem {
+    padding: 10px 16px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.dropdownItem:hover {
+    background-color: #3e3f4b;
+}
+
+.iconButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    color: #ececf1;
+}
+
+.iconButton:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.userButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+}
+
+.userAvatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    background-color: #5436da;
+    color: white;
+}

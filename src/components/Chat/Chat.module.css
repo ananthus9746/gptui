@@ -1,0 +1,88 @@
+.chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: rgb(47, 47, 47);
+    position: relative;
+    width: 100%;
+}
+
+/* Messages container */
+.messagesContainer {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 1rem;
+    scroll-behavior: smooth;
+}
+
+/* Input container at the bottom */
+.inputContainer {
+    position: sticky;
+    bottom: 0;
+    background-color: rgb(56, 56, 56);
+    padding: 1rem;
+    border-top: 1px solid #5c5c5c;
+    z-index: 10;
+}
+
+/* Empty state when no messages */
+.emptyState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 2rem;
+    max-width: 48rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.emptyTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #8b8b91;
+    margin-bottom: 2rem;
+}
+
+.suggestionGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0.75rem;
+    width: 100%;
+}
+
+.suggestionCard {
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem;
+    border: 1px solid #e5e5e6;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    text-align: left;
+}
+
+.suggestionCard:hover {
+    background-color: #222222;
+}
+
+.suggestionTitle {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: #d6d6d6;
+    margin-bottom: 0.25rem;
+}
+
+.suggestionDesc {
+    font-size: 0.75rem;
+    color: #8e8ea0;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .suggestionGrid {
+        grid-template-columns: 1fr;
+    }
+}
