@@ -1,135 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Barlow|Tomorrow:400,700&display=swap");
+
 .header {
+    font-family: 'Share Tech Mono', monospace;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    height: 60px;
-    padding: 0 16px;
-    background-color: #202123;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.leftSection {
-    display: flex;
     align-items: center;
-}
-
-.rightSection {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.menuButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 4px;
-    margin-right: 12px;
-    color: #ececf1;
-}
-
-.menuButton:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    padding: 12px 24px;
+    background: #000;
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    box-shadow: 0 0 12px #ffffff22;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 122;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 98% 100%, 2% 100%, 0% 90%);
 }
 
 .chatTitle {
     font-size: 16px;
-    font-weight: 500;
-    margin: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 200px;
+    color: #fff;
+    margin-left: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.newChatButton {
+.leftSection,
+.rightSection {
     display: flex;
     align-items: center;
-    gap: 8px;
-    height: 36px;
-    padding: 0 12px;
-    background-color: #3e3f4b;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
+    gap: 12px;
 }
 
-.newChatButton:hover {
-    background-color: #4a4b57;
-}
 
 .modelSelector {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 6px 12px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Share Tech Mono', monospace;
+    letter-spacing: 1px;
+    cursor: pointer;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 96% 100%, 4% 100%, 0 80%);
+    transition: all 0.3s ease;
+}
+
+
+.newChatButton{
+    
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 8px;
-    height: 36px;
-    padding: 0 12px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
-}
+    color: #fff;
+        border: 2px solid #fff;
+        padding: 6px 12px;
+        font-size: 12px;}
 
+.newChatButton:hover,
 .modelSelector:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.dropdownContainer {
-    position: relative;
+    background-color: #111;
+    box-shadow: 0 0 10px #ffffff66;
 }
 
 .dropdown {
     position: absolute;
-    top: 100%;
+    top: 48px;
     right: 0;
-    margin-top: 4px;
-    background-color: #202123;
-    border-radius: 4px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-    z-index: 10;
-    width: 150px;
+    background-color: #000;
+    border: 2px solid #fff;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 96% 100%, 4% 100%, 0 90%);
+    box-shadow: 0 0 10px #ffffff33;
+    z-index: 1000;
 }
 
 .dropdownItem {
     padding: 10px 16px;
-    font-size: 14px;
+    font-size: 12px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     cursor: pointer;
 }
 
 .dropdownItem:hover {
-    background-color: #3e3f4b;
+    background-color: #111;
 }
 
-.iconButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 4px;
-    color: #ececf1;
+.socialIcon {
+    color: #fff;
+    transition: transform 0.2s;
 }
 
-.iconButton:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+.socialIcon:hover {
+    transform: scale(1.1);
 }
 
+.iconButton,
 .userButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
 }
 
 .userAvatar {
+    background-color: #111;
+    border-radius: 50%;
+    padding: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 4px;
-    background-color: #5436da;
-    color: white;
+}
+
+/* Fancy Connect & Gallery Button */
+.fancyButton {
+    width: 110px;
+    height: 38px;
+    border: none;
+    outline: none;
+    background-color: #000;
+    position: relative;
+    font-family: 'Tomorrow', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    cursor: pointer;
+    clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+    padding: 0;
+    transition: transform 0.2s ease;
+}
+
+.fancyButton:hover {
+    transform: scale(1.05);
+}
+
+.fancyButtonContent {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.fancyButton:hover .fancyButtonContent {
+    background-color: #111;
+    color: #fff;
+    box-shadow: 0 0 8px #ffffff88;
 }

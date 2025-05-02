@@ -3,30 +3,32 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    background-color: rgb(47, 47, 47);
+    background-color: #000;
+    /* pure black */
+    color: #fff;
+    font-family: 'Share Tech Mono', monospace;
+    /* Technical, machine-like font */
     position: relative;
     width: 100%;
 }
 
-/* Messages container */
 .messagesContainer {
     flex: 1;
     overflow-y: auto;
-    padding-bottom: 1rem;
+    padding: 1rem;
     scroll-behavior: smooth;
+    border-top: 1px solid #fff;
 }
 
-/* Input container at the bottom */
 .inputContainer {
     position: sticky;
     bottom: 0;
-    background-color: rgb(56, 56, 56);
+    background-color: #000;
     padding: 1rem;
-    border-top: 1px solid #5c5c5c;
+    border-top: 1px solid #fff;
     z-index: 10;
 }
 
-/* Empty state when no messages */
 .emptyState {
     display: flex;
     flex-direction: column;
@@ -40,47 +42,52 @@
 }
 
 .emptyTitle {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #8b8b91;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 2px;
+    border: 1px solid #fff;
+    padding: 0.5rem 1rem;
     margin-bottom: 2rem;
+    text-transform: uppercase;
 }
 
 .suggestionGrid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 0.75rem;
+    grid-gap: 1rem;
     width: 100%;
 }
 
 .suggestionCard {
-    display: flex;
-    flex-direction: column;
-    padding: 0.75rem;
-    border: 1px solid #e5e5e6;
-    border-radius: 0.5rem;
+    background-color: #000;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 0;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.3s ease;
+    font-size: 0.9rem;
     text-align: left;
+    text-transform: uppercase;
 }
 
 .suggestionCard:hover {
-    background-color: #222222;
+    background-color: #fff;
+    color: #000;
 }
 
 .suggestionTitle {
-    font-weight: 600;
-    font-size: 0.875rem;
-    color: #d6d6d6;
+    font-weight: bold;
     margin-bottom: 0.25rem;
+    font-size: 0.85rem;
 }
 
 .suggestionDesc {
     font-size: 0.75rem;
-    color: #8e8ea0;
+    opacity: 0.85;
 }
 
-/* Media query for smaller screens */
 @media (max-width: 768px) {
     .suggestionGrid {
         grid-template-columns: 1fr;

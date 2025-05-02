@@ -8,7 +8,6 @@ const ChatInput = ({ onSubmit }) => {
 
     const handleInputChange = (e) => {
         setMessage(e.target.value);
-        // Auto-resize the textarea
         adjustTextareaHeight();
     };
 
@@ -20,7 +19,6 @@ const ChatInput = ({ onSubmit }) => {
         }
     };
 
-    // Reset height when message is sent
     useEffect(() => {
         if (!message && textareaRef.current) {
             textareaRef.current.style.height = 'auto';
@@ -32,7 +30,6 @@ const ChatInput = ({ onSubmit }) => {
         if (message.trim()) {
             onSubmit(message);
             setMessage('');
-            // Reset height after sending
             if (textareaRef.current) {
                 textareaRef.current.style.height = 'auto';
             }

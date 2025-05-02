@@ -1,74 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
 .chatInputForm {
     display: flex;
     flex-direction: column;
     width: 100%;
     max-width: 48rem;
     margin: 0 auto;
+    font-family: 'Share Tech Mono', monospace;
 }
 
 .chatInputContainer {
     display: flex;
     align-items: center;
-    border: 1px solid #e5e5e5;
-    border-radius: 0.75rem;
-    background-color: rgb(190, 190, 190);
+    background-color: #ffffff;
     padding: 0.5rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    gap: 8px;
+    box-shadow: 0 0 6px #ffffff11;
+    clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+    border: 2px solid #ffffff22;
 }
 
 .chatInput {
     flex: 1;
-    border: none;
     background: transparent;
+    color: #ffffff;
     font-size: 1rem;
     line-height: 1.5;
     min-height: 24px;
     max-height: 200px;
     resize: none;
-    padding: 0.5rem;
-    outline: none;
-}
-
-.attachButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: none;
+    padding: 0.75rem 1rem;
     border: none;
-    color: #6e6e80;
-    border-radius: 0.25rem;
-    padding: 0.5rem;
-    cursor: pointer;
+    outline: none;
+    caret-color: white;
+    font-family: 'Share Tech Mono', monospace;
+    clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+    background-color: #111;
+    border: 2px solid #ffffff22;
 }
 
-.attachButton:hover {
-    background-color: #f1f1f1;
-}
-
+.attachButton,
 .sendButton {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: none;
-    border: none;
-    color: #d9d9e3;
-    border-radius: 0.25rem;
+    background: transparent;
+    border: 2px solid #ffffff22;
+    color: #000000bb;
     padding: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+    transition: all 0.2s ease;
+}
+
+.attachButton:hover,
+.sendButton.active:hover {
+    background-color: #1a1a1a;
+    border-color: #ffffff66;
+    box-shadow: 0 0 6px #ffffff33;
+}
+
+.sendButton {
     cursor: default;
+    color: #0b0b0b;
 }
 
 .sendButton.active {
-    color: #10a37f;
+    color: #3b3b3b;
+    border-color: #ffffff55;
     cursor: pointer;
 }
 
-.sendButton.active:hover {
-    background-color: #f1f1f1;
-}
-
 .hintText {
-    font-size: 0.75rem;
-    color: #8e8ea0;
+    font-size: 0.7rem;
+    color: #666666;
     text-align: center;
     padding: 0.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    user-select: none;
 }
