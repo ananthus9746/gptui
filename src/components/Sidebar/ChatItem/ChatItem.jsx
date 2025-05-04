@@ -1,3 +1,4 @@
+// ChatItem.jsx
 import React, { useState } from 'react';
 import styles from './ChatItem.module.css';
 import { FiMessageSquare, FiTrash2, FiEdit2 } from 'react-icons/fi';

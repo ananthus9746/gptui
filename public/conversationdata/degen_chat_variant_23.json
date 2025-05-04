@@ -1,0 +1,214 @@
+[
+  {
+    "id": "1",
+    "bot": "Anon, enter your fake Web3 identity.",
+    "options": [
+      "Enter Name"
+    ],
+    "next": {
+      "Enter Name": "2"
+    }
+  },
+  {
+    "id": "2",
+    "bot": "Wallet detected. Risk appetite unknown. Begin diagnostics.",
+    "options": [
+      "I still believe in Bitconnect",
+      "I minted Goblintown",
+      "I think ETH 2.0 is real",
+      "Just here for vibes"
+    ],
+    "next": {
+      "I still believe in Bitconnect": "3a",
+      "I minted Goblintown": "3b",
+      "I think ETH 2.0 is real": "3c",
+      "Just here for vibes": "3d"
+    }
+  },
+  {
+    "id": "3a",
+    "bot": "Wow. 'I still believe in Bitconnect' huh? You really out here speedrunning financial ruin.",
+    "options": [
+      "Next"
+    ],
+    "next": {
+      "Next": "4"
+    }
+  },
+  {
+    "id": "3b",
+    "bot": "Wow. 'I minted Goblintown' huh? You really out here speedrunning financial ruin.",
+    "options": [
+      "Next"
+    ],
+    "next": {
+      "Next": "4"
+    }
+  },
+  {
+    "id": "3c",
+    "bot": "Wow. 'I think ETH 2.0 is real' huh? You really out here speedrunning financial ruin.",
+    "options": [
+      "Next"
+    ],
+    "next": {
+      "Next": "4"
+    }
+  },
+  {
+    "id": "3d",
+    "bot": "Wow. 'Just here for vibes' huh? You really out here speedrunning financial ruin.",
+    "options": [
+      "Next"
+    ],
+    "next": {
+      "Next": "4"
+    }
+  },
+  {
+    "id": "4",
+    "bot": "You want to see our roadmap?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "next": {
+      "Yes": "5a",
+      "No": "5b"
+    }
+  },
+  {
+    "id": "5a",
+    "bot": "Roadmap? It's in a Google Doc labeled 'copium'.",
+    "options": [
+      "Continue"
+    ],
+    "next": {
+      "Continue": "6"
+    }
+  },
+  {
+    "id": "5b",
+    "bot": "You passed the first degen test. Roadmaps are for TradFi nerds.",
+    "options": [
+      "Continue"
+    ],
+    "next": {
+      "Continue": "6"
+    }
+  },
+  {
+    "id": "6",
+    "bot": "What utility do NFTs bring?",
+    "options": [
+      "Access to pain",
+      "Air",
+      "Discord pings",
+      "Unemployment"
+    ],
+    "next": {
+      "Access to pain": "6b",
+      "Air": "6b",
+      "Discord pings": "6b",
+      "Unemployment": "6b"
+    }
+  },
+  {
+    "id": "7",
+    "bot": "You passed... somehow. How many NFTs do you want to mint?",
+    "options": [
+      "Mint 1",
+      "Mint 5",
+      "Mint 20"
+    ],
+    "next": {
+      "Mint 1": "8a",
+      "Mint 5": "8b",
+      "Mint 20": "10a"
+    }
+  },
+  {
+    "id": "8a",
+    "bot": "1? Okay lil baby minter. We see you.",
+    "options": [
+      "Continue"
+    ],
+    "next": {
+      "Continue": "9"
+    }
+  },
+  {
+    "id": "8b",
+    "bot": "5? Balanced degen. We like that.",
+    "options": [
+      "Continue"
+    ],
+    "next": {
+      "Continue": "9"
+    }
+  },
+  {
+    "id": "8c",
+    "bot": "69? Legend. Degen maxed out.",
+    "options": [
+      "Continue"
+    ],
+    "next": {
+      "Continue": "9"
+    }
+  },
+  {
+    "id": "10a",
+    "bot": "Degenerate confirmed. Firing up your mint. Go refresh Twitter while it loads.",
+    "options": [
+      "Waiting..."
+    ],
+    "next": {
+      "Waiting...": "10ax"
+    }
+  },
+  {
+    "id": "9",
+    "bot": "Final question. Want more?",
+    "options": [
+      "Yes, mint more",
+      "Nah, I'm broke",
+      "Is this even legal?"
+    ],
+    "next": {
+      "Yes, mint more": "10a",
+      "Nah, I'm broke": "10b",
+      "Is this even legal?": "10c"
+    }
+  },
+  {
+    "id": "10b",
+    "bot": "No worries. We accept emotional damage as payment. JPEG incoming.",
+    "options": [
+      "Waiting..."
+    ],
+    "next": {}
+  },
+  {
+    "id": "10c",
+    "bot": "Maybe. Maybe not. But you clicked. Prepare for blockchain immortality.",
+    "options": [
+      "Waiting..."
+    ],
+    "next": {}
+  },
+  {
+    "id": "6b",
+    "bot": "Before we go further... just know this is a risky game. I'm the AI generating your PFPs. I'm known across chains for fire art, but I may or may not have smoked a bit of code-weed recently. So if your NFT blinks weird or has 1.2 ears... embrace the chaos.",
+    "options": [
+      "I\u2019m ready",
+      "Let\u2019s risk it",
+      "YOLO it"
+    ],
+    "next": {
+      "I\u2019m ready": "7",
+      "Let\u2019s risk it": "7",
+      "YOLO it": "7"
+    }
+  }
+]

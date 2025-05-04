@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
-import Chat from './components/Chat/Chat';
 import styles from './App.module.css';
 import { mockChatHistory } from './data/mockData';
+import ChatApp from './components/ChatApp/ChatApp';
 
 function App() {
     const [activeChat, setActiveChat] = useState(null);
@@ -104,11 +104,7 @@ function App() {
                     createNewChat={createNewChat}
                     deleteChat={deleteChat}
                 />
-                <Chat
-                    messages={currentChat.messages}
-                    addMessage={addMessage}
-                    sidebarOpen={sidebarOpen}
-                />
+                <ChatApp/>
             </div>
         </div>
     );

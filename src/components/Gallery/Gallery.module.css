@@ -1,0 +1,329 @@
+.galleryContainer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    position: relative;
+    font-family: 'Share Tech Mono', 'Courier New', monospace;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 30px rgba(0, 0, 255, 0.1);
+    z-index: 1;
+    overflow-x: hidden;
+        overflow-y: scroll;
+}
+
+
+.galleryContainer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 170, 0.8), transparent);
+    animation: scanLineHorizontal 3s linear infinite;
+    z-index: 0;
+}
+
+@keyframes scanLineHorizontal {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.galleryTitle {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    margin-top: 70px;
+    letter-spacing: 4px;
+    position: relative;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(0, 255, 170, 0.8);
+}
+
+.galleryTitle::before,
+.galleryTitle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(0, 255, 170, 0), rgba(0, 255, 170, 0.8));
+}
+
+.galleryTitle::before {
+    left: 25%;
+}
+
+.galleryTitle::after {
+    right: 25%;
+    transform: rotate(180deg);
+}
+
+.galleryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.galleryItem {
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+    overflow: hidden;
+}
+
+.galleryItem::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.galleryItem:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 255, 170, 0.3);
+    border-color: rgba(0, 255, 170, 0.5);
+}
+
+.galleryItem:hover::after {
+    opacity: 1;
+}
+
+.galleryItem::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid rgba(0, 255, 170, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+/* Corner accents */
+.imageContainer {
+    position: relative;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.imageContainer::before,
+.imageContainer::after,
+.itemInfo::before,
+.itemInfo::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(0, 255, 170, 0.8);
+    box-shadow: 0 0 8px rgba(0, 255, 170, 0.5);
+    z-index: 1;
+}
+
+.imageContainer::before {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+}
+
+.imageContainer::after {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+}
+
+.itemInfo::before {
+    bottom: 0;
+    left: 0;
+    border-right: none;
+    border-top: none;
+}
+
+.itemInfo::after {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+}
+
+.itemImage {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    filter: brightness(0.9) contrast(1.1);
+    transition: all 0.5s ease;
+}
+
+.galleryItem:hover .itemImage {
+    filter: brightness(1.1) contrast(1.2);
+    box-shadow: 0 0 20px rgba(0, 255, 170, 0.3);
+}
+
+.itemInfo {
+    padding: 1rem;
+    position: relative;
+}
+
+.itemTitle {
+    margin: 0 0 0.5rem;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.itemCreator {
+    margin: 0 0 0.5rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.itemPrice {
+    font-size: 1.1rem;
+    margin: 0.5rem 0 1rem;
+    color: rgba(0, 255, 170, 0.9);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.regenerateButton {
+    background: rgba(21, 21, 21, 0.695);
+    color: rgba(0, 255, 170, 0.9);
+    border: 1px solid rgba(0, 255, 170, 0.5);
+    padding: 0.75rem 1.25rem;
+    cursor: pointer;
+    font-family: 'Share Tech Mono', 'Courier New', monospace;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.regenerateButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 170, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.regenerateButton:hover {
+    background: rgba(0, 255, 170, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(0, 255, 170, 0.5);
+    color: #ffffff;
+}
+
+.regenerateButton:hover::before {
+    left: 100%;
+}
+
+.regenerateButton:active {
+    transform: translateY(0);
+}
+
+.regenerateButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.loadingIndicator {
+    display: inline-block;
+    margin-left: 10px;
+    animation: loadingAnimation 1s infinite;
+}
+
+@keyframes loadingAnimation {
+    0% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.3;
+    }
+}
+
+/* Animation for regeneration */
+@keyframes regenerateAnimation {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    10% {
+        transform: scale(0.9);
+        opacity: 0.5;
+    }
+
+    30% {
+        transform: scale(1.1);
+        opacity: 0.2;
+    }
+
+    50% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    70% {
+        filter: hue-rotate(90deg) brightness(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        filter: hue-rotate(0deg) brightness(1);
+    }
+}
+
+.regenerating {
+    animation: regenerateAnimation 1s ease;
+}
+
+/* Add responsive design */
+@media screen and (max-width: 768px) {
+    .galleryGrid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .galleryTitle::before,
+    .galleryTitle::after {
+        width: 30px;
+    }
+}

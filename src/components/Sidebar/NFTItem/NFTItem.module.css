@@ -1,0 +1,298 @@
+.nftItem {
+    position: relative;
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    font-family: 'Share Tech Mono', 'Courier New', monospace;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.nftItem::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.nftItem:hover::before {
+    opacity: 1;
+    animation: scanLineHorizontal 2s linear infinite;
+}
+
+@keyframes scanLineHorizontal {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.nftItem:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(0, 255, 170, 0.15);
+    border-color: rgba(0, 255, 170, 0.3);
+}
+
+.active {
+    background: rgba(0, 0, 0, 0.9);
+    border-color: rgba(0, 255, 170, 0.5);
+    box-shadow: 0 0 15px rgba(0, 255, 170, 0.2);
+}
+
+.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: rgb(0, 255, 170);
+    box-shadow: 0 0 10px rgba(0, 255, 170, 0.8);
+}
+
+.imagePreview {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.5);
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.imagePreview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.placeholderImage {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.placeholderGlow {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: rgba(0, 255, 170, 0.8);
+    top: 50%;
+    animation: scanLine 2s linear infinite;
+}
+
+@keyframes scanLine {
+    0% {
+        transform: translateY(0) scaleX(0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateY(0) scaleX(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(20px) scaleX(0);
+        opacity: 0;
+    }
+}
+
+.previewOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: #ffffff;
+}
+
+.nftItem:hover .previewOverlay {
+    opacity: 1;
+}
+
+.nftItem:hover .imagePreview img {
+    transform: scale(1.1);
+}
+
+.nftInfo {
+    flex: 1;
+    min-width: 0;
+}
+
+.nftTitle {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.nftDetails {
+    display: flex;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    gap: 8px;
+}
+
+.nftId {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1px 5px;
+    background: rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+}
+
+.nftType {
+    color: rgba(0, 255, 170, 0.8);
+    letter-spacing: 0.5px;
+}
+
+.nftActions {
+    display: flex;
+    gap: 10px;
+    margin-left: 10px;
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+}
+
+.nftItem:hover .nftActions {
+    opacity: 1;
+}
+
+.actionButton {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+    font-size: 0.85rem;
+}
+
+.actionButton:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(0, 255, 170, 0.5);
+    color: rgba(0, 255, 170, 0.9);
+    box-shadow: 0 0 10px rgba(0, 255, 170, 0.2);
+    transform: translateY(-2px);
+}
+
+.itemCornerTopLeft,
+.itemCornerBottomRight {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.2);
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.itemCornerTopLeft {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+}
+
+.itemCornerBottomRight {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+}
+
+.nftItem:hover .itemCornerTopLeft,
+.nftItem:hover .itemCornerBottomRight {
+    width: 12px;
+    height: 12px;
+    border-color: rgba(0, 255, 170, 0.6);
+    box-shadow: 0 0 5px rgba(0, 255, 170, 0.3);
+}
+
+.hoverGlow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 255, 170, 0.15), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.nftItem:hover .hoverGlow {
+    opacity: 0.3;
+}
+
+/* Add digital noise effect */
+.nftItem::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nftItem {
+        padding: 10px;
+    }
+
+    .imagePreview {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+    }
+
+    .nftActions {
+        gap: 5px;
+    }
+
+    .actionButton {
+        width: 24px;
+        height: 24px;
+    }
+}

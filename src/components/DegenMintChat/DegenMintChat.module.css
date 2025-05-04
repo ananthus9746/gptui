@@ -1,0 +1,520 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #000000;
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 30%),
+        radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 30%);
+    font-family: 'Share Tech Mono', 'Courier New', monospace;
+    color: #ffffff;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+
+}
+
+
+
+
+.header {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 12px 15px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid #ffffff;
+    border-radius: 0;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(3px);
+    position: relative;
+
+    margin-top: 50px;
+}
+
+.header::before,
+.header::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ffffff;
+}
+
+.header::before {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+}
+
+.header::after {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.variantBadge {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5px 10px;
+    border-radius: 0;
+    border-left: 1px solid #ffffff;
+    font-size: 0.85rem;
+    color: #ffffff;
+}
+
+.variantIcon {
+    margin-right: 6px;
+}
+
+.chatContainer {
+    width: 100%;
+    max-width: 900px;
+    height: 80vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.05);
+    position: relative;
+    backdrop-filter: blur(3px);
+    scrollbar-width: thin;
+    scrollbar-color: #ffffff #000000;
+}
+
+.chatContainer::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border-bottom: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+}
+
+.chatContainer::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    border-bottom: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+}
+
+.chatContainer::-webkit-scrollbar {
+    width: 3px;
+}
+
+.chatContainer::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+.chatContainer::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+.chatBubble {
+    padding: 12px 15px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+    word-wrap: break-word;
+    max-width: 90%;
+    position: relative;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.show {
+    opacity: 1;
+}
+
+.bot {
+    align-self: flex-start;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 1px solid #ffffff;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.bot::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+}
+
+.user {
+    align-self: flex-end;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+    border-right: 1px solid #ffffff;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.user::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+}
+
+.user::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    border-bottom: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+}
+
+.icon {
+    margin-right: 12px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    width: 28px;
+    height: 28px;
+    border-radius: 0;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.bot .icon {
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.user .icon {
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.text {
+    line-height: 1.5;
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+    gap: 8px;
+}
+
+.optionButton {
+    background: rgba(0, 0, 0, 0.9);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 18px;
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Share Tech Mono', 'Courier New', monospace;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.optionButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: all 0.6s ease;
+}
+
+.optionButton::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+}
+
+.optionButton:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+    border-color: #ffffff;
+}
+
+.optionButton:hover::before {
+    left: 100%;
+}
+
+.optionButton:active {
+    transform: translateY(0);
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+.specialButton {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px dashed rgba(255, 255, 255, 0.3);
+}
+
+.specialButton:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid #ffffff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+.buttonIcon {
+    margin-right: 8px;
+    font-size: 0.9rem;
+}
+
+.typingDots {
+    display: flex;
+    align-items: center;
+}
+
+.typingDots span {
+    animation: blink 1.4s infinite both;
+    height: 5px;
+    width: 5px;
+    margin: 0 3px;
+    background: #ffffff;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 1);
+}
+
+.typingDots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typingDots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0.2;
+        transform: scale(0.8);
+    }
+
+    20% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 0.2;
+        transform: scale(0.8);
+    }
+}
+
+.loadingContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    color: #ffffff;
+    font-family: 'Share Tech Mono', 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.loadingContainer::before,
+.loadingContainer::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+}
+
+.loadingContainer::before {
+    top: 0;
+    left: 0;
+    border-top: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+}
+
+.loadingContainer::after {
+    bottom: 0;
+    right: 0;
+    border-bottom: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+}
+
+.loadingSpinner {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+    position: relative;
+    animation: spin 1.5s linear infinite;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.loadingSpinner::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Digital noise effect */
+.container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    opacity: 0.05;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Techno frame overlay */
+.frameOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.frameBorder {
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    top: 20px;
+    left: 20px;
+    z-index: 0;
+}
+
+.frameCorner {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ffffff;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.frameCorner--topLeft {
+    top: 20px;
+    left: 20px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.frameCorner--topRight {
+    top: 20px;
+    right: 20px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.frameCorner--bottomLeft {
+    bottom: 20px;
+    left: 20px;
+    border-right: none;
+    border-top: none;
+}
+
+.frameCorner--bottomRight {
+    bottom: 20px;
+    right: 20px;
+    border-left: none;
+    border-top: none;
+}
+
+/* Add tech-grid background */
+.techGridBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: -1;
+}
